@@ -1,0 +1,37 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<ion-header no-border>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button class="button" defaultHref="/profile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <img class="logoPic" alt="company_logo" src="../../assets/img/logoalenegul.png" />
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h5>Vi matcher deg!</h5>
+    <div class="faenihelvete">
+      <ion-item lines="none" class=loadingSpinner >
+        <ion-spinner name="crescent" height='500px' width='100px'></ion-spinner>
+      </ion-item>
+    </div>
+    <div class="wrapper">
+        <ion-grid>
+            <ion-row>
+                <ion-item no-lines="none" lines="none"  class="lobbyUsers slide-in-left" *ngIf="lobbyName!=''">
+                    <ion-col>
+          <ion-textarea lines="none" class="user" *ngFor="let member of members">
+              <div class="textcol"> {{member.username}} har blitt med i samtalen</div>
+          </ion-textarea>
+                    </ion-col>
+      </ion-item>
+
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header></ion-header>
+
+<ion-content id="background_color" padding>
+
+    <ion-grid fixed>
+        <div class="logoWrapper">
+            <ion-row>
+                <ion-col>
+                    <img class="logoPic" alt="company_logo" src="../../assets/img/logoalenegul.png"/>
+                </ion-col>
+            </ion-row>
+        </div>
+        <ion-row>
+            <ion-col align-self-center>
+                <h2 id="velkommenH2">Velkommen</h2>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+            <ion-col text-center>
+                <p> Med Tjommis velger du hva du brenner for så finner vi dine nye studiepartnere</p>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col text-center>
+                <ion-button class="btn_videre" strong=true [routerLink]="['/login']" routerLinkActive="active" routerDirection="root">VIDERE</ion-button>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <p class="txt_login_info">Du kan med sikkerhet vite at de du møter er studenter siden all innlogging går
+                    via Feide</p>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+</ion-content>

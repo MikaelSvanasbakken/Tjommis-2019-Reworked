@@ -1,0 +1,53 @@
+<ion-header no-border>
+    <ion-toolbar mode="ios">
+    <ion-buttons>
+        <ion-back-button class="back" defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+        <ion-title>
+            <img class="logoPic" alt="company_logo" src="../../assets/img/logoalenegul.png"/>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content id="background_color">
+    <ion-list padding text-center>
+
+        <h3 id="userText">Registrering</h3>
+        <ion-item class="ion-item-border-top">
+            <ion-input name="name" type="text" placeholder="Fornavn" [(ngModel)]="username"></ion-input>
+
+        </ion-item>
+        <ion-item>
+            <ion-input name="LastName" type="text" placeholder="Etternavn" [(ngModel)]="lastName">
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input name="password" type="password" placeholder="Passord" [(ngModel)]="password">
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input name="email" type="email" placeholder="Epost" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Institutt</ion-label>
+            <ion-select [(ngModel)]="selectedInstitutt">
+                <ion-select-option name="School" type="text" placeholder="Institutt"
+                    *ngFor="let selectedInstitutt of Institutt">{{selectedInstitutt}}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item class="ion-item-border-bottom">
+            <ion-label>Studieretning</ion-label>
+            <ion-select [(ngModel)]="selectedStudie">
+                <ion-select-option name="Studie" type="text" placeholder="Studieretning"
+                    *ngFor="let selectedStudie of Studie">{{selectedStudie}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <div class="center">
+            <ion-button size="large" (click)="register()" [disabled]="isPosting">
+                <ion-spinner name="lines" *ngIf="isPosting"></ion-spinner>
+                videre
+            </ion-button>
+        </div>
+    </ion-list>
+</ion-content>

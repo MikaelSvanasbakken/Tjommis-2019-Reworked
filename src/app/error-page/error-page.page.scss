@@ -1,0 +1,37 @@
+.wrapper {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  height: 75%;
+}
+
+h1{
+
+  margin: 5px;
+  padding: 10px;
+}
+
+.box{
+  padding: 10px;
+  border: 1px solid black;
+  width: 250px;
+  justify-self: center;
+  align-self: center;
+  background: white;
+}
+
+ion-card{
+  position: relative;
+  top: 50%;
+}
+.chatdiv{
+  display: grid;
+  top: 50%;
+}
+
+.button{
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  top: 110%;
+}

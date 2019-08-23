@@ -1,0 +1,40 @@
+<ion-header no-border>
+    <ion-toolbar mode="ios">
+        <ion-buttons slot="start">
+            <ion-back-button class="button" [routerLink]="['/profile']"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <img class="logoPic" alt="company_logo" src="../../assets/img/logoalenegul.png"/>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding text-wrap [scrollEvents]="true" scrollX="true">
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-list lines="none">
+                    <div class="item">
+                        <ion-item class="scale-in-center" no-padding *ngFor="let item of messages"
+                                  [ngClass]="messageIsSelf(item) ? 'itemSelf' : 'itemExternal'">
+                            <div class="messageWrapper">
+                                <p class="username">{{item.user}}</p>
+                                <p class="message">{{item.text}}</p>
+                            </div>
+                        </ion-item>
+                    </div>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<div>
+    <ion-item lines="none">
+        <textarea class="inputField" type="text" placeholder="Skriv noe" [(ngModel)]="message"
+                  (keyup.enter)="handleSendMessage()"></textarea>
+        <ion-button class="sendBtn" icon-only item-right (click)="handleSendMessage()">
+            <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>
+        </ion-button>
+    </ion-item>
+</div>
+

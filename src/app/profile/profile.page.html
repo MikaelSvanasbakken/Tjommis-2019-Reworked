@@ -1,0 +1,51 @@
+<div class="pageWrapper">
+    <ion-grid class="user_grid">
+        <ion-row class="user_row">
+            <ion-col class="user_col">
+                <ion-item class="user_item">
+                    <ion-avatar slot="start">
+                        <img alt="profilepic"
+                            src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                    </ion-avatar>
+                    <ion-label>
+                        <h4 class="user_name">{{username}}</h4>
+                    </ion-label>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+    <ion-content padding [scrollEvents]="true" scrollX="true">
+        <p text-center *ngIf="lobbies.length == 0 ">Her vil dine lobbyer vises!</p>
+        <ion-card class="lobby" (click)="joinLobby(lobby)" *ngFor="let lobby of lobbies">
+            <ion-card-title>
+                <h5 class="cardTitle">{{sanitateName(lobby.lobbyName)}}</h5>
+            </ion-card-title>
+            <p>du snakker med:</p>
+            <div class="lobbyMembers">
+                <ion-col *ngFor="let member of lobby.members">{{member.username}}</ion-col>
+            </div>
+        </ion-card>
+    </ion-content>
+
+    <div class="footer">
+        <p *ngIf="myinterests.length == 0" text-center>Velg hva du interesserer deg for!</p>
+        <p *ngIf="myinterests.length > 0" text-center>Klikk for å matche med én eller flere!</p>
+        <ion-row class="btn_row">
+            <ion-col text-center>
+                <span (click)="chatSingle()" class="chatWrapper">
+                    <img class="chat_private" src="../../assets/img/ChatPrivate.png">
+                </span>
+                <img class="chat_group" src="../../assets/img/chatGroup.png" (click)="chatGroup()">
+            </ion-col>
+        </ion-row>
+        <ion-row class="interesse_row">
+            <ion-col text-center>
+                <ion-button mode="md" class="interesse_btn" (click)="interesser()">
+                    interesser
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </div>
+</div>

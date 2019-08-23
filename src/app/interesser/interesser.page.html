@@ -1,0 +1,39 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="profile"></ion-back-button>
+        </ion-buttons>
+        <h4 class="h1_interesser">HVILKE INTERESSER HAR DU?</h4>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-grid class="categoryGrid">
+        <ion-row>
+            <ion-col *ngFor="let item of categories" text-center>
+                <ion-button class="kategoriBtn" (click)="setActiveCategory(item)">
+                    {{item}}
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid class="tagsGrid">
+        <ion-row >
+            <ion-col text-center align-self-center size="6"  *ngFor="let tag of tags" text-center>
+            <div
+                [ngClass]="isTagSelected(tag) ? 'tagsBtnSelected' : 'tagsBtn'"
+                (click)="addTag(tag);">
+                <span>{{ tag.name }}</span>
+            </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-footer no-border>
+        <ion-toolbar>
+            <ion-button class="lagreBtn" slot="end" (click)="saveInterests();">LAGRE</ion-button>
+        </ion-toolbar>
+    </ion-footer>
+
+</ion-content>

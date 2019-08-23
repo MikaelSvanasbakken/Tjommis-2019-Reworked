@@ -1,0 +1,70 @@
+ion-toolbar {
+  --background: rgba(0,0,0,0);
+  height: 75px;
+}
+
+ion-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+ion-back-button.button {
+  --color: var(--ion-color-border);
+  --padding-start: 0;
+  --padding-end: 0;
+  --margin-inline-end: 0 !important;
+  --margin-inline-start: 0 !important;
+  -webkit-margin-end: 0 !important;
+}
+
+.categoryGrid{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+}
+
+.kategoriBtn {
+  min-width: 120.036px;
+}
+
+.tagsBtn, .tagsBtnSelected {
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 66px;
+  min-width: 66px;
+  border-radius: 20px;
+  cursor: pointer;
+  span {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
+
+.tagsBtn {
+  background: rgba(0,0,0,0);
+  border: 2px solid var(--ion-color-border)!important;
+  color: var(--ion-color-secondary-contrast) !important;
+}
+.tagsBtnSelected {
+  font-weight: bold;
+  background: var(--ion-color-border);
+  border: 2px solid var(--ion-color-border);
+  text-decoration: underline  #8151A8;
+
+
+  color: black;
+}
+
+.lagreBtn {
+  --background: var(--ion-color-border);
+}
+
+.h1_interesser {
+  font-size: 0.9rem;
+  color: var(--ion-color-secondary-contrast);
+  letter-spacing: 1.38px;
+  text-align: left;
+}

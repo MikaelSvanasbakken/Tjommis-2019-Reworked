@@ -1,0 +1,37 @@
+{
+  "/token": {
+    "target": "https://smidigprosjekt.azurewebsites.net",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel":"debug"
+  },
+  "/api/*": {
+    "target": "https://smidigprosjekt.azurewebsites.net",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel":"debug"
+  },
+  "/tjommisHub":{
+    "target": "https://smidigprosjekt.azurewebsites.net",
+    "secure": true,
+    "ws": true,
+    "changeOrigin": true,
+    "logLevel":"debug"
+  },
+  "/tjommisHubDebug":{
+    "target": "https://localhost:5001",
+    "secure": false,
+    "ws": true,
+    "changeOrigin": true,
+    "logLevel":"debug"
+  },
+  "/developer_token": {
+    "target": "https://localhost:5001/token",
+    "secure": false,
+    "pathRewrite": {
+      "^/developer_token": ""
+    },
+    "changeOrigin": true,
+    "logLevel":"debug"
+  }
+}
