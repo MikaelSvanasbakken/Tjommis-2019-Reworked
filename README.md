@@ -3,7 +3,7 @@ Ionic is a pretty easy-to-use framework. So all you should need to do is to:
 
 - npm install -g ionic
 - Save this project in preferred folder.
-- Navigate to the folder you saved the project in, and run ionic start.
+- Navigate to the folder you saved the project in, and run ionic serve
 
 
 
